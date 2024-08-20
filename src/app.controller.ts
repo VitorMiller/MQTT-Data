@@ -8,8 +8,22 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @MessagePattern('notification_channel')
-  getData(@Payload() data: DataDto){
-       console.log(data)
-       //return this.appService.saveData(data);
+  getData(@Payload() dataDto: String){
+    
+    console.log(dataDto.split("|"));
+
+ 
+    const values = dataDto.split("|");
+    const structuredData = {
+        id: parseInt(values[0]),
+        acelX: parseFloat(values[1]),
+        acelY: parseFloat(values[2]),
+        acelZ: parseFloat(values[3]),
+        girX: parseFloat(values[4]),
+        girY: parseFloat(values[5]),
+        girZ: parseFloat(values[6]),
+        tempoMs: parseInt(values[7])
+    };
+    return this.appService.saveData(structuredData);
    } 
 }

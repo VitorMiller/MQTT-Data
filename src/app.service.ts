@@ -16,7 +16,8 @@ export class AppService {
         girX: data.girX,
         girY:data.girY,
         girZ:data.girZ,
-        mag: data.mag
+        //mag: data.mag,
+        tempoMs: data.tempoMs
       },
     });
     //console.log(registro)

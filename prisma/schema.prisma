@@ -14,7 +14,7 @@ datasource db {
 }
 
 model data {
-  id              Int   @id @default(autoincrement())
+  id              Int    @id @default(autoincrement())
   idTipoMovimento Int
   acelX           Float
   acelY           Float
@@ -22,5 +22,6 @@ model data {
   girX            Float
   girY            Float
   girZ            Float
-  mag             Float
+  tempoMs         BigInt
+  //mag             Float
 }
